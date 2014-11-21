@@ -1,0 +1,10 @@
+<p class="question">
+  <%= lesson.date.to_s %> -
+  <%= link_to truncate(lesson.body, length: 35), lesson %> by <span class='italic'><%= lesson.instructor %></span>
+
+  <% if on_your_lessons_page? %>
+      <%= display_solved(lesson) %>- <%= link_to 'Edit', edit_lesson_path(lesson) %>
+  <% end %>
+</p>
+
+ <br/><br/>

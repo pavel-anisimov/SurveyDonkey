@@ -1,0 +1,16 @@
+<%= form_for(@lesson) do |f| %>
+  <%= render 'common/form_errors', object: @lesson %>
+  <p>
+    <%= f.label :body, 'Lesson' %><br/>
+    <%= f.text_field :body %>      <br/><br/>
+
+    <%= f.label :body, 'Instructor' %><br/>
+    <%= f.text_field :instructor %>          <br/><br/>
+
+    <%= f.label :body, 'Date' %><br/>
+    <%= f.date_select :date %>         <br/><br/>
+
+    <%= f.submit 'Create a Lesson' %>
+  </p>
+
+<% end %>

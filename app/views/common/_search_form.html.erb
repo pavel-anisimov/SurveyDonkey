@@ -1,0 +1,5 @@
+<% # form_tag is for manipulating a regular form and not to pass an object %>
+<%= form_tag(search_path, method: 'get') do %>
+  <%= text_field_tag :keyword, nil, placeholder: 'Search',  size: '20', id: 'keyword' %>
+  <%= submit_tag 'Search' %>
+<% end %>

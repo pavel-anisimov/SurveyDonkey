@@ -1,0 +1,31 @@
+<% provide(:title, 'SurveyDonkey! - Register') %>
+
+
+<h1>Register</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'common/form_errors', object: @user %>
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :username, placeholder: "Last Name" %>
+  </p>
+  <p>
+    <%= f.label :platoon %><br/>
+    <%= f.select(:platoon, [1, 2]) %>
+  </p>
+  <p>
+    <%= f.label :squad %><br/>
+    <%= f.select(:squad, [1, 2, 3]) %>
+  </p>
+  <p>
+    <%= f.label :password %><br/>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, 'Confirm' %><br/>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  </p>
+  <p>
+    <%= f.submit 'Register' %>
+  </p>
+<% end %>

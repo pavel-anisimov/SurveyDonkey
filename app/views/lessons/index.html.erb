@@ -1,0 +1,23 @@
+<% provide(:title, 'SurveyDonkey, class 006-14 A Flow') %>
+
+<% if logged_in? %>
+  <% if current_user.username.capitalize == 'Anisimov' %>
+  <div id="ask">
+    <h1>Create a Lesson</h1>
+    <%= render 'lesson_form' %>
+  </div><!-- end ask -->
+    <% end %>
+<% end %>
+
+<div id="questions">
+  <h2>Incomplete AARs (insufficient data)</h2>
+
+  <% if @lessons.any? %>
+    <ul>
+      <%= render @lessons %>
+    </ul>
+    <%= will_paginate %>
+  <% else %>
+    <p>No new classes/lessons have been created.</p>
+  <% end %>
+</div>

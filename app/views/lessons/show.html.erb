@@ -1,0 +1,35 @@
+<% provide(:title, 'View Lesson') %>
+<h2>Class/Lesson:</h2>
+
+<p>
+  <strong><%= @lesson.body %></strong>
+  <% if logged_in? %>
+  by <%= @lesson.instructor %> (<%= @lesson.date.to_s %>)
+  <% end %>
+</p>
+
+<div id="answers">
+  <h2>Sustain/Improve Bullets</h2>
+
+  <% if @lesson.responds.any? %>
+    <% if logged_in? %>
+    <ul>
+      <%= render @lesson.responds %>
+    </ul>
+    <% else %>
+    <p>You need to be logged in to view AAR responds</p>
+    <% end %>
+  <% else %>
+    <p>AAR for this class is not completed yet</p>
+  <% end %>
+
+</div>
+
+<p id="post-answer">
+  <h2>Add a respond (sustain/improve)</h2>
+  <% if logged_in? %>
+    <%= render 'responds/respond_form' %>
+  <% else %>
+    <p>Please login to post the sustain/improve</p>
+  <% end %>
+</p><!-- end post-answer -->

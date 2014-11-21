@@ -1,0 +1,14 @@
+<%= form_for([@lesson, @respond]) do |f|  %>
+<% # associated with objects from question#show controller, called from the view %>
+    <%= render 'common/form_errors', object: @respond %>
+    <p>
+      <%= f.label :body, 'AAR Respond: ' %>
+      <%= f.text_field :body %>
+
+
+      <%= f.select(:respond_type, ['Improve', 'Sustain']) %>
+
+      <%= f.submit 'Submit' %>
+    </p>
+
+<% end %>

@@ -1,0 +1,6 @@
+<li>
+  <span class="<%= respond.respond_type %>"><%= respond.respond_type %>.</span> <%= respond.body %>
+  <% if current_user.username == 'Anisimov' %>
+  - <span class="italic"> by <%= respond.user.username.capitalize   %></span>
+  <% end %>
+</li>

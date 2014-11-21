@@ -1,0 +1,20 @@
+<% provide(:title, 'Edit Lesson') %>
+<h1>Edit the Class/Lesson</h1>
+
+<%= form_for(@lesson) do |f| %>
+    <%= render 'common/form_errors', object: @lesson %>
+
+    <p>
+      <%= f.label :body %><br/>
+      <%= f.text_field :body %>
+    </p>
+
+    <p>
+      <%= f.label :solved %><br/>
+      <%= f.check_box :solved %>
+    </p>
+
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+<% end %>

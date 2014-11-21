@@ -1,0 +1,17 @@
+           root        /                                      lessons#index
+          users POST   /users(.:format)                       users#create
+       new_user GET    /users/new(.:format)                   users#new
+       sessions POST   /sessions(.:format)                    sessions#create
+    new_session GET    /sessions/new(.:format)                sessions#new
+lesson_responds POST   /lessons/:lesson_id/responds(.:format) responds#create
+        lessons GET    /lessons(.:format)                     lessons#index
+                POST   /lessons(.:format)                     lessons#create
+    edit_lesson GET    /lessons/:id/edit(.:format)            lessons#edit
+         lesson GET    /lessons/:id(.:format)                 lessons#show
+                PUT    /lessons/:id(.:format)                 lessons#update
+                DELETE /lessons/:id(.:format)                 lessons#destroy
+       register        /register(.:format)                    users#new
+          login        /login(.:format)                       sessions#new
+         logout        /logout(.:format)                      sessions#destroy
+   your_lessons        /your_lessons(.:format)                lessons#your_lessons
+         search        /search(.:format)                      lessons#search

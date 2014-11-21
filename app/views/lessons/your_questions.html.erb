@@ -1,0 +1,11 @@
+<% provide(:title, 'Class/Lesson') %>
+<h1>Classes/Lessons</h1>
+
+<% if @lessons.try(:any?) # exception capture in case if an array is empty %>
+  <ul>
+    <%= render @lessons %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <p>You have not created any Lessons/Classes</p>
+<% end %>
